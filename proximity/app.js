@@ -2,6 +2,7 @@ var Gpio = require('onoff').Gpio,
   sensor = new Gpio(17, 'in', 'both');    //#A
 
 sensor.watch(function (err, value) { //#B
+  console.log('watching...');
   if (err) exit(err);
   console.log(value ? 'there is someone!' : 'not anymore!');
 });
